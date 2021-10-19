@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="BT1 border border-success text-success my-3 mx-5">
+        <div class="container py-3">
+            <h2 style="text-align: center;">
+                Quản lý tuyển sinh
+            </h2>
+            <form>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="diemChuan" placeholder="Điểm chuẩn">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="khuVuc">
+                        <option value="0">Chọn khu vực</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="doiTuong">
+                        <option value="0">Chọn đối tượng</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="diem1" placeholder="Điểm môn thứ 1" value>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="diem2" placeholder="Điểm môn thứ 2">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="diem3" placeholder="Điểm môn thứ 3">
+                </div>
+                <button type="button" id="btnGraduation" class="btn btn-info">Kết quả</button>
+                <br>
+                <i class="fa fa-hand-point-right text-danger pt-4" style="font-size: 25px;"></i>
+                <span class="my-3 text-danger" id="txtGraduation" style="font-size: 20px;">
+                </span>
+            </form>
+        </div>
+    </div>
+    <div class="BT2 border border-success text-success my-3 mx-5">
+        <div class="container py-3">
+            <h2 style="text-align: center;">
+                Tính tiền điện
+            </h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder="Nhập họ tên">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="numberKW" placeholder="Nhập số kw">
+                </div>
+                <button type="button" id="btnBill" class="btn btn-info">Tính tiền điện</button>
+                <br>
+                <i class="fa fa-hand-point-right text-danger pt-4" style="font-size: 25px;"></i>
+                <span class="my-3 text-danger" id="txtBill" style="font-size: 20px;">
+            </form>
+        </div>
+    </div>
+    <div class="BT3 border border-success text-success my-3 mx-5">
+        <div class="container py-3">
+            <h2 style="text-align: center;">
+                Tính thuế thu nhập cá nhân
+            </h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nameTax" placeholder="Nhập họ tên">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="income" placeholder="Tổng thu nhập năm">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="people" placeholder="Số người phụ thuộc">
+                </div>
+                <button type="button" id="btnTax" class="btn btn-info">Tính tiền thuế</button>
+                <br>
+                <i class="fa fa-hand-point-right text-danger pt-4" style="font-size: 25px;"></i>
+                <span class="my-3 text-danger" id="txtTax" style="font-size: 20px;">
+            </form>
+        </div>
+    </div>
+    <div class="BT4 border border-success text-success my-3 mx-5">
+        <div class="container py-3">
+            <h2 style="text-align: center;">
+                Tính tiền cáp
+            </h2>
+            <form>
+                <div class="form-group">
+                    <select class="form-control" id="customerType" onchange="myOnChange()">
+                        <option value="default">Chọn loại khách hàng</option>
+                        <option value="H">Nhà dân</option>
+                        <option value="B">Doanh Nghiệp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nameID" placeholder="Nhập mã khách hàng">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="advanced" placeholder="Số kênh cao cấp">
+                </div>
+                <div class="form-group" >
+                    <input type="number" class="form-control" id="connection" placeholder="Số kết nối" >
+                </div>
+
+                <button type="button" id="btnNetwork" class="btn btn-info">Tính tiền cáp</button>
+                <br>
+                <i class="fa fa-hand-point-right text-danger pt-4" style="font-size: 25px;"></i>
+                <span class="my-3 text-danger" id="txtNetwork" style="font-size: 20px;">
+            </form>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/main2.js"></script>
+    <script src="./js/main3.js"></script>
+    <script src="./js/main4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
